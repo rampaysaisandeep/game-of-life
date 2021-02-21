@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage(SCM){
             step {
-                git https://github.com/rampaysaisandeep/game-of-life.git
+                git 'https://github.com/rampaysaisandeep/game-of-life.git'
             }
         }
         stage(Build){
