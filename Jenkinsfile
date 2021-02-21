@@ -1,5 +1,5 @@
 pipeline {
-    agent {gameoflife}
+    agent {label 'gameoflife'}
     stages{
         stage('SCM'){
             steps {
