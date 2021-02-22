@@ -1,5 +1,14 @@
 pipeline {
     agent {label 'gameoflife'}
+    triggers {
+        pollSCM('* * * * *')
+    }
+    options {
+        (time: 30, units: MINUTES')
+    }
+    parameters {
+        string(name: 'MAVENGOAL', defaultValue: 'clean package', description: 'Given maven goal')
+    }
     stages{
         stage('SCM'){
             steps {
@@ -8,7 +17,7 @@ pipeline {
         }
         stage('Build'){
             steps {
-                sh "mvn clean package"
+                sh "mvn $("params.MAVENGOAL")
             }
         }
     }
