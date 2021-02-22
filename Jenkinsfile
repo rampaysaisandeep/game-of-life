@@ -4,7 +4,7 @@ pipeline {
         pollSCM('* * * * *')
     }
     options {
-        (time: 30, units: MINUTES')
+        (time: 30, units: 'MINUTES')
     }
     parameters {
         string(name: 'MAVENGOAL', defaultValue: 'clean package', description: 'Given maven goal')
