@@ -15,10 +15,9 @@ pipeline{
         stage('post build'){
             steps {
                 Junit 'gameoflife-web/target/surefire-reports/*.xml'
-                ArchiveArtifacts 'gameoflife-web/target/*.war'  
-            }
-            
-                }
-            }
+                archiveArtifacts 'gameoflife-web/target/*.war'  
+            }    
+                
         }
+    }
 }
